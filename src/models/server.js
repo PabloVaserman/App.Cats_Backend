@@ -30,7 +30,7 @@ class Server {
 
     // Ruta dedicada a los endpoints
 
-    this.catsPath = "/rutasGatos"; // localhost:5050/rutasGatos (Endpoint)
+    this.catsPath = "/rutasGatos"; // localhost:5050/rutasGatos (Ruta principal del Endpoint)
 
     // En ese Endpoint, las solicitudes Put, Patch, Post, Delete que se hagan van a ser controladas por el servidor.
 
