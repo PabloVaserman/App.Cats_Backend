@@ -33,7 +33,7 @@ const postCatsController = async (req, res) => {
 
 // Controlador GET
 
-const getDBCatsController = async (_, res) => {
+const getDBCatsController = async (req, res) => {
   // Traigo info. de la DB
 
   try {
