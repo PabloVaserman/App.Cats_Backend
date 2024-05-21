@@ -27,7 +27,9 @@ const {
 
 // Middlewares: router.post("/", [MIDDLEWARE], usuariosPost ---> validador-controlador)
 
-router.get("/", getDBCatsController); // Listado de los gatos en adopción en la DB
+// router.get("/", getDBCatsController); // Listado de los gatos en adopción en la DB
+
+router.get("/listado", getDBCatsController); // Listado de los gatos en adopción en la DB (Ruta secundaria: Listado)
 
 router.get("/cats-api", getAPICatsController); // Listado de la API
 
@@ -62,7 +64,7 @@ router.post(
 //
 
 router.put(
-  "/:id",
+  "/editar/:id",
   [
     param("id", "No es un ID válido").isMongoId(),
     param("id").custom(existeGatoPorId),
