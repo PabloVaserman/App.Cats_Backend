@@ -14,6 +14,7 @@ const {
   postCatsController,
   putCatsController,
   getDBCatsController,
+  getIDCatsController,
   getAPICatsController,
 } = require("../controllers/catsControllers"); // Lógica de importación de los controladores. Desestructuración.
 
@@ -31,10 +32,10 @@ const {
 
 router.get("/listado", getDBCatsController); // Listado de los gatos en adopción en la DB (Ruta secundaria: Listado)
 
-router.get("/cats-api", getAPICatsController); // Listado de la API
+router.get("/galeria", getAPICatsController); // Listado de la API
 
 router.post(
-  "/",
+  "/postear",
   [
     // MIDDLEWARES
 
@@ -62,6 +63,15 @@ router.post(
 // Con "custom" le indico que es un Middleware propio.
 // Antes de cerrarlo, tengo que validar que ninguno de los checkeos haya dado error. Para eso utilizo "validarCampos".
 //
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxx!!!!!!!!
+// Hacer una ruta para obtener gatos por ID (lo uso en el listado, EN LA PRIMER SOLICITUD)
+router.get(
+  "/gatos/:id",
+  getIDCatsController
+
+  // CREAR getCatsController usando método "findbyID"
+);
 
 router.put(
   "/editar/:id",
